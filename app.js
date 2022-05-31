@@ -12,11 +12,17 @@ app.use(express.static('public'))
 
 // 首頁路由
 app.get('/', (req, res) => {
-  res.render('index', { title: "首頁" })
+  res.render('index')
 })
 // 其他頁面路由
-app.get('/:title', (req, res) => {
-  res.render(`${req.params.title}`)
+app.get('/about', (req, res) => {
+  res.render('about')
+})
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio')
+})
+app.get('/contact', (req, res) => {
+  res.render('contact')
 })
 
 app.listen(port, () => {
